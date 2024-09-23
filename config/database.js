@@ -1,6 +1,3 @@
-const path = require('path');
-const fs = require('fs');
-
 module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'sqlite');
 
@@ -12,10 +9,7 @@ module.exports = ({ env }) => {
         database: env('DATABASE_NAME'),
         user: env('DATABASE_USERNAME'),
         password: env('DATABASE_PASSWORD'),
-        ssl: {
-          rejectUnauthorized: false, // Allow self-signed certificates
-          ca: fs.readFileSync(path.join(__dirname, '..', 'config', 'ca.pem')).toString(), // Adjusted path
-        },
+        ssl: false, // Disable SSL
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
