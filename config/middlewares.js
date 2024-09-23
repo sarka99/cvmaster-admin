@@ -18,8 +18,7 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
-      origin: ['https://cv-master-teal.vercel.app'], 
+      origin: ['https://cv-master-teal.vercel.app'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization'],
     },
