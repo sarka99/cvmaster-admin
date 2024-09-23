@@ -18,7 +18,10 @@ module.exports = [
   {
     name: 'strapi::cors',
     config: {
-      origin: ['https://cv-master-teal.vercel.app'], // Frontend domain
+      origin: [
+        'https://cv-master-teal.vercel.app', // Production frontend
+        'https://cv-master-gm73zqtod-sarka99s-projects.vercel.app' // Your current Vercel deployment
+      ],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
