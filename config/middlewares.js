@@ -19,13 +19,13 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       origin: [
-        'https://cv-master-gamma.vercel.app/', // Production frontend
-        'https://cv-master-gupjp7xef-sarka99s-projects.vercel.app/' // Your current Vercel deployment
+        'https://cv-master-gamma.vercel.app',  // Corrected without trailing slash
+        'https://cv-master-gupjp7xef-sarka99s-projects.vercel.app',  // Corrected without trailing slash
       ],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,
-      credentials: true, // Allow credentials if needed
+      credentials: true,  // Keep credentials enabled if needed
     },
   },
   'strapi::poweredBy',
