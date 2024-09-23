@@ -14,7 +14,7 @@ module.exports = ({ env }) => {
         password: env('DATABASE_PASSWORD'),
         ssl: {
           rejectUnauthorized: false, // Allow self-signed certificates
-          ca: fs.readFileSync(path.join(__dirname, 'ca.pem')).toString(), // Update the path
+          ca: fs.readFileSync(path.join(__dirname, '..', 'config', 'ca.pem')).toString(), // Adjusted path
         },
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
