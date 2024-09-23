@@ -13,8 +13,8 @@ module.exports = ({ env }) => {
         user: env('DATABASE_USERNAME', 'strapi'),
         password: env('DATABASE_PASSWORD', 'strapi'),
         ssl: {
-          ca: fs.readFileSync(path.join(__dirname, 'ca.pem')).toString(),
-          rejectUnauthorized: true, // Ensure strict certificate verification
+          rejectUnauthorized: false, // Allow self-signed certificates
+          ca: fs.readFileSync(path.join(__dirname, 'ca.pem')).toString(), // Update the path
         },
       },
       pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
